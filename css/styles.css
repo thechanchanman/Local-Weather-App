@@ -1,0 +1,299 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: 'Dosis', sans-serif;
+	height: 100%;
+	background: #1d1618;
+}
+
+a {
+	color: #2f2b2b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.wrapper {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.box-wrapper {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.box {
+	width: 80%;
+	max-width: 500px;
+	margin: auto;
+	-moz-perspective: 1000px;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+.front, .back {
+	background: #ca1a1a;
+	background: -webkit-linear-gradient(145deg, rgb(241, 81, 81) 0%, rgb(222, 96, 69) 35%, rgb(185, 36, 36) 70%, rgb(167, 1, 1) 100%);
+	background: linear-gradient(145deg, rgb(241, 81, 81) 0%,rgb(222, 96, 69) 35%,rgb(185, 36, 36) 70%,rgb(167, 1, 1) 100%);
+	color: #dae6e6;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+	-moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+	overflow-x: hidden;
+}
+
+.front {
+	z-index: 10;
+	-moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+.back {
+	z-index: 9;
+	-moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.back .credits {
+	position: absolute;
+  top: 45%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+.back p {
+    padding-bottom: 25px;
+}
+
+.flip .front {
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  z-index: 11;
+}
+.flip .back {
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  z-index: 12;
+}
+
+.title {
+	padding: 20px 20px 5px 20px;
+}
+
+.title h1 {
+	font-weight: 200;
+	display: inline;
+	cursor: pointer;
+}
+
+.title h1:hover {
+
+}
+
+#city {
+	padding-top: 14px;
+}
+
+.divide {
+	position: relative;
+}
+
+.divide:before {
+	position: absolute;
+  content: " ";
+  width: 140%;
+  height: 100%;
+	border-top: 1px solid rgba(248, 243, 255, 0.1);
+	box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1);
+  left: -20%;
+  top: -8px;
+}
+
+.back .divide:before {
+	position: absolute;
+	content: " ";
+	width: 110%;
+	height: 100%;
+	border-top: 1px solid rgba(248, 243, 255, 0.1);
+	box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1);
+	left: -5%;
+	top: 1.4em;
+}
+
+.weather {
+	margin: 30px 0;
+}
+
+#weather-icon {
+	font-size: 6em;
+}
+
+#description {
+	margin-bottom: 20px;
+	font-size: 1.6em;
+}
+
+.details {
+	box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.07);
+  background: rgba(253, 253, 253, 0.04);
+}
+
+.details .wi-thermometer {
+	font-size: 0.7em;
+  top: -4px;
+  line-height: 0.7em;
+  position: relative;
+  padding-right: 10px;
+}
+
+.temperature {
+	font-size: 3em;
+}
+
+.temperature, .humidity, .direction {
+	display: inline-block;
+	margin: 0 15px;
+  vertical-align: middle;
+}
+
+.humidity, .direction {
+	font-size: 1.2em;
+}
+
+.date {
+	padding: 20px;
+}
+
+.date span {
+	padding: 0 5px;
+}
+
+.settings {
+	padding: 0;
+	font-size: 0px;
+}
+
+button {
+	margin: 0;
+	border: none;
+	outline: none;
+	-moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  -webkit-transition: all .2s linear;
+	transition: all .2s linear;
+	padding: 10px 0;
+	font-size: 24px;
+	background: rgba(25, 25, 25, 0.08);
+	display: inline;
+	width: 50%;
+	color: #dae6e6;
+}
+
+button i {
+	position: relative;
+	top: 2px;
+}
+
+button:hover {
+	background: rgba(255, 255, 255, 0.3);
+	cursor: pointer;
+}
+
+button:active {
+  background: #f1f1f1;
+  color: #bf2d29;
+}
+
+button.selected {
+  background: #dae6e6;
+  color: #bf2d29;
+}
+
+.error {
+	background: #ca1a1a;
+	color: #fafafa;
+	font-weight: bold;
+	font-size: 1.2em;
+	line-height: 1.45em;
+	min-height: 60px;
+	padding: 10px;
+	text-align: center;
+	border-radius: 10px;
+}
+
+.error h2 {
+	margin: 60px 0;
+}
+
+.error p {
+	font-weight: 200;
+	font-size: 0.6em;
+}
+
+@media (max-width: 500px) {
+	.wrapper {
+		display: block;
+	}
+
+	.box-wrapper {
+		display: block;
+		height: 100%;
+	}
+	.box {
+		max-width: 100%;
+		width: 100%;
+		border-radius: 0;
+		box-shadow: none;
+		height: 100%;
+	}
+}
+
+@media (max-width: 500px) and (min-height: 550px) {
+	.front {
+		height: 100%;
+	}
+
+	.settings {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
+}
